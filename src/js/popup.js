@@ -1,10 +1,10 @@
 ﻿let popup_widget = (function () {
-    function show(succes, message) {
+    function show(type, message) {
         var color = "red";
         var imgPath = "/src/img/Error_Icon.png";
 
         //changes colour + imgSource depending on the parameter 'succes'
-        if (succes) {
+        if (type === "succes") {
             color = "green";
             imgPath = "/src/img/Succes_Icon.png";
         }
@@ -50,7 +50,7 @@
         mainContent.appendChild(message_content);
 
         //succes message expension
-        if (succes) {
+        if (type === "succes") {
             el.style.height = "200px"
             var footer = document.createElement("footer");
             footer.style = "height: 70px;";

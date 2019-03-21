@@ -28,6 +28,23 @@
                     expect(ModuleTemplate._configMap).toBe(undefined);
                 });
             });
+
+            describe("Single Page Application", function () {
+                it("Checks if global variable SPA is not undefined", function () {
+                    expect(SPA).toBeDefined();
+                });
+                it("Checks if SPA Modules are available as SPA attribute", function () {
+                    expect(SPA.Data).toBeDefined();
+                    expect(SPA.Model).toBeDefined();
+                    expect(SPA.Reversi).toBeDefined();
+                });
+                it("Checks if public method initModule is available", function () {
+                    expect(SPA.initModule).toBeTruthy();
+                });
+                it("Checks if SPA has feedbackmodule", function () {
+                    expect(SPA.feedbackModule).toBeDefined();
+                });
+            });
         });
     </script>
 </body>
