@@ -19,6 +19,7 @@
         hideButton.value = "X";
         var mainContent = document.createElement("div");
 
+        // append children to main container
         el.appendChild(topContainer);
         topContainer.appendChild(hideButton);
         el.appendChild(mainContent);
@@ -55,6 +56,7 @@
             footer.style = "height: 70px;";
             el.appendChild(footer);
 
+            //create & style button elements
             var acceptButton = document.createElement("input");
             acceptButton.style = "width: 100px;  height: 30px; border: 2px solid black; float: right; margin-right: 10px;";
             acceptButton.type = "button";
@@ -64,6 +66,7 @@
             declineButton.type = "button";
             declineButton.value = "Weigeren";
 
+            // append button children to footer
             footer.appendChild(acceptButton);
             footer.appendChild(declineButton);
         }
@@ -71,11 +74,13 @@
         _store(message);
     }
 
+    // sets main container.visiblity to hidden
     function hidePopup(el) {
         var popupContainer = el;
         popupContainer.style.visibility = "hidden";
     }
 
+    // stores messages in session
     function _store(message) {
         if (sessionStorage.msg) {
             let msgArray = JSON.parse(sessionStorage.msg);
@@ -85,7 +90,7 @@
         else {
             sessionStorage.msg = JSON.stringify([message]);
         }
-
+        // if there are > 10 messages in session array shift array
         var msgArray = JSON.parse(sessionStorage.msg);
         if (msgArray.length > 10) {
             while (msgArray.length > 10) {

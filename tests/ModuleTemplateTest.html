@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="../jasmine/lib/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="../jasmine/lib/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="../jasmine/lib/jasmine/boot.js"></script>
+    <script type="text/javascript" src="../src/js/Modules.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="../jasmine/lib/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../jasmine/lib/jasmine/jasmine.css">
+</head>
+<body>
+    <script>
+        var mt = new ModuleTemplate;
+        describe("Module Template", function () {
+            it("checks if module does not return undefined", function () {
+                expect(mt.initModule()).toBe(true);
+            });
+        });
+    </script>
+</body>
+</html>

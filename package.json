@@ -1,0 +1,26 @@
+{
+  "name": "schoolshit",
+  "version": "1.0.0",
+  "description": "Reversi Game",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnowsADev/Schoolshit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SnowsADev/Schoolshit/issues"
+  },
+  "homepage": "https://github.com/SnowsADev/Schoolshit#readme"
+}
