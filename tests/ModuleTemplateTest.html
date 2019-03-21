@@ -3,20 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+
+    <script type="text/javascript" src="../src/js/JQuery-3.3.1.js"></script>
     <script type="text/javascript" src="../jasmine/lib/jasmine/jasmine.js"></script>
     <script type="text/javascript" src="../jasmine/lib/jasmine/jasmine-html.js"></script>
     <script type="text/javascript" src="../jasmine/lib/jasmine/boot.js"></script>
     <script type="text/javascript" src="../src/js/Modules.js"></script>
+    <script type="text/javascript" src="../src/js/TestFile.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="../jasmine/lib/jasmine/jasmine_favicon.png">
     <link rel="stylesheet" type="text/css" href="../jasmine/lib/jasmine/jasmine.css">
 </head>
 <body>
     <script>
-        var mt = new ModuleTemplate;
-        describe("Module Template", function () {
-            it("checks if module does not return undefined", function () {
-                expect(mt.initModule()).toBe(true);
+        $("document").ready(function () {
+            describe("Module Template", function () {
+                it("checks if module does not return undefined", function () {
+                    expect(ModuleTemplate).toBeDefined();
+                });
+                it("checks if init method does not return undefined", function () {
+                    expect(typeof ModuleTemplate.initModule).toBe("function");
+                });
+                it("checks if _configMap variable is not accessable", function () {
+                    expect(ModuleTemplate._configMap).toBe(undefined);
+                });
             });
         });
     </script>

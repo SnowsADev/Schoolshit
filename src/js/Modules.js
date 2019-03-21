@@ -1,7 +1,5 @@
-﻿
-
-let ModuleTemplate = (function ($) {
-    var configMap = null;
+﻿let ModuleTemplate = (function ($) {
+    var _configMap = {};
 
     //initialize function
     var initModule = function () {
