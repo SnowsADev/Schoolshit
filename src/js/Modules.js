@@ -25,15 +25,35 @@ let SPA = (function ($) {
 })(jQuery);
 
 SPA.Data = (function ($) {
-    var _configMap = {};
+    var _configMap = {
+        endpoints: ["/api/game/"],
+        environment: ""
+    };
 
     //initialize function
-    var initModule = function () {
+    var initModule = function (environment) {
+        _configMap.environment = environment;
         return true;
     }
 
+    var getSpellen = (function () {
+        var result;
+        if (environment === "production") {
+            result = $.ajax({
+                url: endpoints[0],
+                succes: (function () { return data }),
+                type: "POST"
+            });
+        }
+
+        return result;
+    });
+
+
+
     return {
-        initModule: initModule
+        initModule: initModule,
+        getSpellen: getSpellen
     };
 })(jQuery);
 
@@ -63,7 +83,7 @@ SPA.Reversi = (function ($) {
     };
 })(jQuery);
 
-SPA.feedbackModule = (function () {
+SPA.feedbackModule = (function ($) {
     var _configMap = {};
 
     //initialize function
@@ -86,4 +106,4 @@ SPA.feedbackModule = (function () {
         toonErrorBericht: toonErrorBericht,
         initModule: initModule
     }
-})();
+})(jQuery);

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="../jasmine/lib/jasmine/jasmine-html.js"></script>
     <script type="text/javascript" src="../jasmine/lib/jasmine/boot.js"></script>
     <script type="text/javascript" src="../src/js/Modules.js"></script>
-    <script type="text/javascript" src="../src/js/TestFile.js"></script>
+    <script type="text/javascript" src="../jasmine-ajax-master/lib/mock-ajax.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="../jasmine/lib/jasmine/jasmine_favicon.png">
     <link rel="stylesheet" type="text/css" href="../jasmine/lib/jasmine/jasmine.css">
@@ -17,6 +17,8 @@
 <body>
     <script>
         $("document").ready(function () {
+            const API = $.get("")
+
             describe("Module Template", function () {
                 it("checks if module does not return undefined", function () {
                     expect(ModuleTemplate).toBeDefined();
@@ -26,6 +28,33 @@
                 });
                 it("checks if _configMap variable is not accessable", function () {
                     expect(ModuleTemplate._configMap).toBe(undefined);
+                });
+            });
+
+            describe("Data module", function () {
+                beforeEach(function () {
+                    jasmine.Ajax.install();
+                });
+
+                afterEach(function () {
+                    jasmine.Ajax.uninstall();
+                });
+
+                it("", function () {
+                    it("should have responseText: 'abc'", function () {
+                        //dit is van het voorbeeld
+                        /*
+                        let promiseGetWeather = getWeather();   //functie onder test
+                        console.log(promiseGetWeather)
+
+                        let request = jasmine.Ajax.requests.mostRecent();
+
+                        request.respondWith({ status: 'success', responseText: 'abc' });
+
+                        console.log(request)
+                        return expect(request.responseText).toBe('abc')
+                        */
+                    });
                 });
             });
 
