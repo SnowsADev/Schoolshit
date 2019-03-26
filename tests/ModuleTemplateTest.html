@@ -17,7 +17,12 @@
 <body>
     <script>
         $("document").ready(function () {
-            const API = $.get("")
+            const API = function () {
+                $.get("");
+            };
+            const getWeather = function () {
+                return $.get('http://api.openweathermap.org/data/2.5/weather?q=Baarn&APPID=8fcf26b16c912c56bdbb840b5276b6c4');
+            }
 
             describe("Module Template", function () {
                 it("checks if module does not return undefined", function () {
@@ -40,20 +45,11 @@
                     jasmine.Ajax.uninstall();
                 });
 
+                const 
+
                 it("", function () {
                     it("should have responseText: 'abc'", function () {
-                        //dit is van het voorbeeld
-                        /*
-                        let promiseGetWeather = getWeather();   //functie onder test
-                        console.log(promiseGetWeather)
 
-                        let request = jasmine.Ajax.requests.mostRecent();
-
-                        request.respondWith({ status: 'success', responseText: 'abc' });
-
-                        console.log(request)
-                        return expect(request.responseText).toBe('abc')
-                        */
                     });
                 });
             });

@@ -3,6 +3,7 @@
 <head>
     <script type="text/javascript" src="../js/JQuery-3.3.1.js"></script>
     <script type="text/javascript" src="../js/Modules.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
 
 
 
@@ -15,9 +16,10 @@
         var message = "Mike wil deelnemen aan jouw spel. Geef akkoord.";
         //popup_widget.show(succes, message);
         //popup_widget.show(succes, message);
-         
-        
 
+        $(document).ready(function () {
+            SPA.feedbackModule.toonSuccesBericht(); 
+        });
 
     </script>
 </body>

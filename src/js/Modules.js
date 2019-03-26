@@ -21,14 +21,16 @@ let SPA = (function ($) {
 
     return {
         initModule: initModule
+
+
     };
 })(jQuery);
 
 SPA.Data = (function ($) {
     var _configMap = {
-        endpoints: ["/api/game/"],
-        environment: ""
-    };
+        endpoint: "../api/game.json",
+        environment: String.
+    };  
 
     //initialize function
     var initModule = function (environment) {
@@ -40,8 +42,11 @@ SPA.Data = (function ($) {
         var result;
         if (environment === "production") {
             result = $.ajax({
-                url: endpoints[0],
+                url: endpoint,
                 succes: (function () { return data }),
+                error: (function () {
+                    SPA.feedbackModule.toonErrorBericht("error", "Failed request to server.")
+                }),
                 type: "POST"
             });
         }
@@ -95,9 +100,8 @@ SPA.feedbackModule = (function ($) {
         var message = "Mike wil deelnemen aan jouw spel.Geef akkoord.";
         popup_widget.show("succes", message)
     }
-    var toonErrorBericht = function (type) {
-        var message = "Er is iets fout gegaan!";
-        popup_widget.show(type, message)
+    var toonErrorBericht = function (type, error) {
+        popup_widget.show(type, error)
     }
 
 
